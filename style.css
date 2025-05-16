@@ -1,0 +1,948 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #333333;
+    --footer-color: #ffffff;
+    --text-color: #ffffff;
+    
+    /* Variabel baru atau yang disesuaikan untuk header */
+    --header-bg: #181818; /* Latar belakang navbar yang sangat gelap */
+    --nav-links-container-bg: #2A2A2A; /* Latar belakang untuk kontainer link navigasi */
+    --nav-link-inactive-color: #A0A0A0; /* Warna untuk link navigasi yang tidak aktif */
+    --button-text-dark: #000000; /* Warna teks hitam untuk tombol dengan latar belakang terang */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3%; /* Ubah dari 1rem 3% menjadi 1.5rem 3% */
+    /* position: fixed; Dihapus atau diubah menjadi static */
+    width: 100%;
+    /* top: 0; Dihapus */
+    /* z-index: 1000; Dihapus */
+    background-color: var(--primary-color);
+}
+
+.logo {
+    line-height: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-links-container-bg);
+    border-radius: 20px;
+    padding: 0.1rem; /* Sedikit penyesuaian padding kontainer jika perlu */
+    
+}
+nav .logo img {
+    max-height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+.nav-links a {
+    color: var(--nav-link-inactive-color);
+    text-decoration: none;
+    padding: 0.8rem 2rem; /* Perbesar padding di sini */
+    font-size: 1.2rem;      /* Perbesar ukuran font di sini */
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a.active {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-links a:not(.active):hover {
+    color: var(--text-color);
+}
+
+.download-cv {
+    background-color: var(--secondary-color); /* Latar belakang putih */
+    color: var(--button-text-dark);    /* Teks hitam */
+    border: none;
+    padding: 0.8rem 2rem; /* Padding yang disesuaikan */
+    border-radius: 25px;     /* Bentuk pil */
+    cursor: pointer;
+    /* Pastikan tidak ada margin-left yang mengganggu di sini, 
+       karena justify-content: space-between pada nav sudah menangani penempatan */
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: #e9e9e9; /* Warna sedikit lebih gelap saat hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 5%;
+    margin-top: 0; /* Diubah menjadi 0 atau nilai kecil, misal 1rem atau 2rem */
+                         /* Sesuaikan jika Anda masih ingin sedikit spasi di atas hero section */
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 2rem; 
+    margin-bottom: 1.5rem;
+    color: var(--text-color); /* Kembalikan ke warna teks normal */
+    /* Hapus properti gradasi dari sini */
+}
+
+.name-gradient { /* Kelas baru untuk gradasi pada nama */
+    background-image: linear-gradient(to right, #0F4C75, #BBE1FA); /* Contoh gradasi biru */
+    -webkit-background-clip: text; /* Untuk browser berbasis WebKit (Chrome, Safari) */
+    background-clip: text;
+    color: transparent;
+    display: inline-block; /* Diperlukan agar background-clip bekerja dengan baik */
+}
+
+h1 {
+    font-size: 6.5rem; /* Diperbesar dari 5.5rem */
+    margin-bottom: 2.5rem; /* Penyesuaian margin untuk ukuran font yang lebih besar */
+    line-height: 1.1; /* Mungkin perlu sedikit penyesuaian line-height */
+}
+
+.subtitle {
+    font-size: 1.8rem; /* Diperbesar dari 1.6rem */
+    margin-bottom: 3.5rem; /* Penyesuaian margin */
+    color: var(--text-color); 
+}
+
+.social-links {
+    display: flex;
+    gap: 4rem;
+}
+
+.social-links a i { /* Mengubah target dari img ke a i */
+    font-size: 35px; /* Atur ukuran ikon */
+    color: var(--text-color); /* Atur warna ikon, sesuaikan jika perlu */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover i {
+    color: var(--text-color); 
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 80%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Skills Section */
+.learned {
+    padding: 5rem 5%;
+    /* margin-top: 5rem; */ 
+}
+
+h2 {
+    font-size: 3rem; 
+    margin-bottom: 6rem; /* Diperbesar dari 4rem untuk spasi lebih banyak */
+    text-align: center;
+    /* Gaya untuk garis bawah biru tetap sama */
+    color: var(--text-color);
+    position: relative; 
+    padding-bottom: 0.8rem; 
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 3.5rem; /* Diperbesar dari 2.5rem untuk jarak antar card lebih besar */
+}
+
+.skill-card {
+    background-color: transparent; 
+    padding: 4.5rem; /* Diperbesar dari 2rem untuk membuat card lebih besar */
+    border-radius: 25px; 
+    flex: 1;
+    display: flex;
+    align-items: center; 
+    border: 1.5px solid rgba(255, 255, 255, 0.8); 
+    box-shadow: none; 
+    transition: transform 0.3s ease, border-color 0.3s ease; 
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 1); /* Buat border lebih solid saat hover */
+    /* Hapus box-shadow dari hover juga */
+}
+
+.skill-icon-wrapper {
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color); /* Ubah menjadi putih */
+    border: 1.5px solid rgba(0, 0, 0, 0.15); /* Outline gelap yang sangat halus */
+    margin-right: 1.8rem; 
+    flex-shrink: 0; 
+}
+
+.skill-icon-wrapper i {
+    font-size: 2rem; 
+    color: var(--primary-color); 
+}
+
+.skill-text-content h3 {
+    font-size: 1.65rem; /* Diperbesar dari 1.45rem */
+    color: var(--text-color);
+    margin-bottom: 0.8rem; /* Sedikit diperbesar dari 0.7rem */
+}
+
+.skill-text-content p {
+    font-size: 1.05rem; 
+    color: var(--nav-link-inactive-color); 
+    line-height: 1.6; 
+}
+
+.section-divider {
+    height: 1.5px; 
+    background-color: rgb(255, 255, 255); 
+    width: 80%; 
+    margin: 6rem auto; 
+}
+
+/* Projects Section */
+.projects {
+    padding: 5rem 0 0 0; /* Atur padding: top 5rem, right 0, bottom 0, left 0 */
+    text-align: center; 
+}
+
+.projects h2 {
+    font-size: 3rem; 
+    margin-bottom: 6rem; 
+    text-align: center;
+    color: var(--text-color);
+    position: relative; 
+    padding-bottom: 0.8rem; 
+    display: inline-block; 
+}
+
+/* Hapus ::after dari .projects h2 jika tidak ada garis bawah biru di desain untuk judul ini */
+/* Jika ada, pastikan lebarnya sesuai */
+/* .projects h2::after { ... } */
+
+
+.project-card {
+    display: flex;
+    flex-direction: column; /* Mengatur anak-anaknya (wrapper konten & tombol) secara vertikal */
+    align-items: center; /* Memusatkan tombol secara horizontal */
+    gap: 2rem; /* Jarak antara wrapper konten dan tombol */
+    margin-top: 4rem; 
+    background-color: var(--nav-links-container-bg); 
+    padding: 4rem 5% 3rem 5%; /* Disesuaikan padding bawah untuk tombol */
+    border-radius: 0; 
+    text-align: left; 
+}
+
+.project-content-wrapper { /* Gaya untuk wrapper baru */
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%; /* Memastikan wrapper mengambil lebar penuh dari card */
+}
+
+.project-info {
+    flex: 1.5; /* Mengembalikan ke rasio flex sebelumnya agar gambar tidak terlalu kecil */
+    /* Hapus display: flex; flex-direction: column; align-items: flex-start; dari sini */
+}
+
+.project-info p {
+    margin-bottom: 5rem; 
+    line-height: 1.75; /* Sedikit disesuaikan untuk keterbacaan font yang lebih besar */
+    font-size: 2rem; /* Diperbesar dari 1.1rem */
+    color: var(--text-color); 
+}
+
+.see-more {
+    background-color: transparent; 
+    color: var(--text-color);    
+    border: 1.5px solid var(--text-color); 
+    padding: 0.9rem 2.2rem; 
+    border-radius: 25px;     
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Hapus align-self: center; */
+    margin-top: 1.5rem; /* Tambahkan margin atas untuk jarak dari konten di atasnya */
+}
+
+.see-more:hover {
+    background-color: var(--text-color); /* Latar putih saat hover */
+    color: var(--primary-color);    /* Teks hitam saat hover */
+}
+
+.project-image {
+    flex: 1; /* Biarkan ini tetap 1, atau bisa dikecilkan misal menjadi 0.8 */
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 20px; /* Biarkan ini jika gambar di dalam kartu tetap ingin ada radius */
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color); 
+    padding: 4rem 5% 3rem 5%; 
+    margin-top: 0; 
+}
+
+.footer-content {
+    text-align: center;
+}
+
+/* Gaya spesifik untuk logo di footer */
+.footer-content .logo {
+    margin-bottom: 1.5rem; /* Jarak dari logo ke link */
+    line-height: 0; /* Menghilangkan spasi ekstra jika ada dari line-height div */
+}
+
+.footer-content .logo img {
+    max-height: 50px; /* Atur tinggi maksimal logo, sesuaikan sesuai kebutuhan */
+    width: auto;      /* Lebar akan menyesuaikan secara otomatis menjaga rasio aspek */
+    /* Jika Anda ingin ukuran yang tetap:
+    height: 50px;
+    width: 150px; // Sesuaikan
+    */
+}
+
+.footer-links {
+    margin: 2rem 0; /* Jarak vertikal untuk container link */
+}
+
+.footer-links a {
+    color: var(--primary-color); /* Warna hitam untuk link */
+    text-decoration: none;
+    margin: 0 1.8rem; /* Jarak antar link */
+    font-size: 1.8rem; /* Ukuran font link */
+    font-weight: 400; /* Ketebalan font link */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Tambahkan underline saat hover jika diinginkan */
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: #000000; /* Warna abu-abu muda untuk garis */
+    width: 70%; /* Lebar garis */
+    margin: 2.5rem auto; /* Jarak vertikal dan pemusatan horizontal */
+}
+
+.copyright {
+    color: var(--primary-color); /* Warna hitam untuk copyright */
+    font-size: 0.9rem;
+    margin-top: 1.5rem; /* Jarak dari garis ke copyright */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* About Page Styles */
+.about-page-main {
+    padding-top: 80px; 
+    padding-bottom: 4rem; 
+}
+
+.about-me-hero {
+    display: flex;
+    align-items: center; 
+    gap: 4rem;           /* Sedikit perbesar jarak antara gambar dan teks */
+    padding: 2rem 5%;    /* Sedikit perbesar padding */
+    margin-bottom: 4rem; /* Sedikit perbesar margin bawah */
+}
+
+.about-me-image img {
+    width: 400px;        /* Diperbesar dari 200px */
+    height: 400px;       /* Diperbesar dari 200px */
+    border-radius: 25px; /* Sedikit perbesar border-radius jika diinginkan */
+    object-fit: cover;
+    margin-left: 10rem;
+    box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5); 
+}
+
+.about-me-intro {
+    flex: 1; 
+}
+
+.about-me-intro h1 {
+    font-size: 5.5rem;   /* Diperbesar dari 2.8rem */
+    margin-bottom: 1.2rem; /* Disesuaikan */
+    color: var(--text-color);
+    line-height: 1.2; /* Tambahkan untuk spasi antar baris jika nama terlalu panjang */
+    margin-left: 11rem;
+}
+
+.about-me-intro h1 .name-gradient { /* Menggunakan name-gradient seperti di halaman utama */
+    background-image: linear-gradient(to right, #0F4C75, #BBE1FA); /* Contoh gradasi biru */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: regular;
+}
+
+.about-me-intro p {
+    font-size: 2.25rem;  /* Diperbesar dari 1.1rem */
+    line-height: 1.75; /* Disesuaikan */
+    color: var(--text-color); 
+    max-width: 700px; /* Sedikit perlebar max-width jika perlu */
+    margin-left: 11rem;
+}
+
+.about-details {
+    display: flex;
+    padding: 0 5%;
+    gap: 4rem; /* Jarak antara kolom kiri dan kanan */
+}
+
+.about-column-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem; /* Jarak antara Education dan Strength */
+}
+
+.about-column-right {
+    flex: 1;
+}
+
+.education-section h3,
+.strength-section h3,
+.experience-section h3 {
+    font-size: 3.3rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    margin-left: 17rem;
+}
+
+.education-item,
+.experience-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 10.5rem;
+    
+}
+
+.education-date,
+.experience-date {
+    font-size: 1.3rem;
+    color: var(--nav-link-inactive-color);
+    min-width: 100px; /* Agar tanggal rata */
+    margin-left: 6.5rem;
+}
+
+.education-date .date-present,
+.experience-date .date-present {
+    color: #3282B8; /* Warna biru untuk "Present" */
+    font-weight: 500;
+}
+
+.experience-date .date-highlight {
+    color: #3282B8; /* Warna biru untuk rentang tanggal di experience */
+    font-weight: 500;
+}
+
+.education-info h4,
+.experience-info h4 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.education-info p,
+.experience-info p {
+    font-size: 1.1rem;
+    color: var(--nav-link-inactive-color);
+}
+
+.strength-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-left: 17rem;
+}
+
+.strength-pills .pill {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: default; /* Atau tambahkan interaksi jika perlu */
+}
+
+/* Responsive adjustments untuk about page jika diperlukan */
+@media (max-width: 768px) {
+    .about-me-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me-image img {
+        margin-bottom: 2rem;
+    }
+
+    .about-details {
+        flex-direction: column;
+    }
+}
+
+/* Tools I Know Section */
+.tools-known-section {
+    background-color: #1e1e1e; /* Warna latar belakang abu-abu gelap, sesuaikan jika perlu */
+    padding: 3rem 5% 4rem 5%; /* Atas, Kanan-Kiri, Bawah */
+    margin: 4rem 5% 0 5%; /* Margin atas, kanan-kiri, bawah (0 agar footer langsung menempel jika ini section terakhir) */
+    border-radius: 20px; /* Sudut melengkung untuk section */
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.tools-known-section h2 {
+    font-size: 3.5rem; /* Ukuran font judul section */
+    color: var(--text-color);
+    margin-bottom: 5rem; /* Jarak dari judul ke grid tools */
+}
+
+.tools-grid {
+    display: flex;
+    justify-content: center; /* Memusatkan item tools jika tidak memenuhi lebar */
+    gap: 3rem; /* Jarak antar item tools */
+    flex-wrap: wrap; /* Agar item pindah ke baris baru jika tidak cukup ruang */
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px; /* Lebar setiap item tool, sesuaikan jika perlu */
+}
+
+.tool-item img {
+    width: 125px; /* Lebar ikon */
+    height: 125px; /* Tinggi ikon */
+    object-fit: contain; /* Memastikan ikon terlihat utuh */
+    border-radius: 15px; /* Jika ikon Anda berbentuk kotak dan ingin sudutnya melengkung */
+    /* Jika ikon sudah memiliki latar transparan dan bentuk yang pas, border-radius mungkin tidak perlu */
+
+}
+
+/* Penyesuaian margin bawah untuk .about-details jika tools-known-section ada di bawahnya */
+.about-details {
+    display: flex;
+    padding: 0 5%;
+    gap: 4rem; /* Jarak antara kolom kiri dan kanan */
+    margin-bottom: 4rem; /* Tambahkan margin bawah untuk memberi jarak ke section tools */
+}
+
+/* Blog Page Styles */
+.blog-page-main {
+    padding-top: 0px;
+    min-height: calc(100vh - 80px - 230px);
+    background-color: var(--bg-dark);
+}
+
+.blog-hero {
+    text-align: center;
+    padding: 1rem 5%;
+    margin-top: px;
+}
+
+.blog-hero h2 {
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+.blog-posts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2.5rem;
+    padding: 0 15%;
+    margin: 0 auto 4rem auto;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.blog-post-item {
+    background-color: #2A2A2A;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.blog-post-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.blog-post-item h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-item .post-meta {
+    font-size: 1rem;
+    color: var(--nav-link-inactive-color);
+    margin: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-item .read-more {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    margin: 0 1.5rem;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.blog-post-item .read-more:hover {
+    background-color: var(--text-color);
+    color: var(--bg-dark);
+}
+
+@media (max-width: 768px) {
+    .blog-posts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blog-hero {
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+.blog-hero h2 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.blog-hero p {
+    font-size: 1.2rem;
+    color: var(--nav-link-inactive-color);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 5%;
+}
+
+.blog-post-item {
+    background-color: var(--nav-links-container-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post-item:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.blog-post-item h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-item p.post-meta {
+    font-size: 0.85rem;
+    color: var(--nav-link-inactive-color);
+    margin-bottom: 0.75rem;
+}
+
+.blog-post-item p {
+    font-size: 0.95rem;
+    color: var(--nav-link-inactive-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.blog-post-item a.read-more {
+    display: inline-block;
+    text-decoration: none;
+    color: #5DADE2;
+    font-weight: 500;
+}
+
+.blog-post-item a.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Contact Page Styles */
+.contact-page-main {
+    padding-top: 80px; /* Sesuaikan jika tinggi navbar Anda berbeda atau jika navbar tidak fixed */
+    padding-bottom: 4rem; /* Beri ruang sebelum footer */
+    min-height: calc(100vh - var(--nav-height) - 230px); /* Perkiraan tinggi footer, sesuaikan jika perlu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-hero {
+    text-align: center;
+    padding: 2rem 5% 2rem 5%; /* Mengurangi padding atas dan bawah */
+    margin-bottom: 1rem; /* Mengurangi margin bawah */
+}
+
+.contact-hero h2 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: var(--nav-link-inactive-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form-section {
+    width: 100%;
+    max-width: 700px; /* Batasi lebar form untuk tampilan yang lebih baik */
+    padding: 2rem 5%;
+    text-align: center; /* Memusatkan placeholder teks */
+}
+
+/* Anda bisa menambahkan gaya untuk elemen form di sini nanti */
+/* Contoh:
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--nav-link-inactive-color);
+    background-color: var(--nav-links-container-bg);
+    color: var(--text-color);
+}
+
+.contact-form-section button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--button-text-dark);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-section button[type="submit"]:hover {
+    background-color: #e9e9e9;
+}
+*/
+
+/* Portfolio Page Styles */
+.portfolio-page-main {
+    padding-top: var(--nav-height);
+    padding-bottom: 4rem;
+    background-color: var(--bg-dark);
+}
+
+.portfolio-hero {
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+.portfolio-hero h2 {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 5%;
+}
+
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Diperkecil dari 2rem */
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 1.5rem; /* Diperkecil dari 2rem */
+    margin-bottom: 1.5rem; /* Diperkecil dari 2rem */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content.right-align {
+    text-align: right;
+}
+
+.project-content h3 {
+    font-size: 7.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    margin-left: 1rem; /* Dikurangi dari 2rem */
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-left: 1rem; /* Dikurangi dari 2rem */
+}
+
+.project-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    max-width: 150px; /* Diperkecil dari 200px */
+    height: auto;
+    transform: perspective(800px) rotateY(-20deg);
+}
+
+.laptop-container {
+    perspective: 800px;
+}
+
+.laptop-mockup {
+    max-width: 350px; /* Diperkecil dari 400px */
+    height: auto;
+    transform: rotateX(10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .project-content.right-align {
+        text-align: center;
+    }
+
+    .project-content h3 {
+        font-size: 2rem;
+    }
+
+    .phone-mockup,
+    .laptop-mockup {
+        max-width: 100%;
+        transform: none;
+    }
+}
