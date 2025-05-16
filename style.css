@@ -638,8 +638,7 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    text-align: left;
     padding-bottom: 1.5rem;
 }
 
@@ -661,6 +660,7 @@ footer {
     color: var(--nav-link-inactive-color);
     margin: 0 1.5rem;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .blog-post-item .read-more {
@@ -674,6 +674,8 @@ footer {
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.1rem;
+    align-self: center;
+    margin-left: 0;
 }
 
 .blog-post-item .read-more:hover {
@@ -754,15 +756,25 @@ footer {
     line-height: 1.5;
 }
 
-.blog-post-item a.read-more {
+.blog-post-item .read-more {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1.5px solid var(--text-color);
+    padding: 0.9rem 2.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;
     text-decoration: none;
-    color: #5DADE2;
-    font-weight: 500;
+    margin-top: auto;
+    margin-left: 1.5rem;
 }
 
-.blog-post-item a.read-more:hover {
-    text-decoration: underline;
+.blog-post-item .read-more:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
 }
 
 /* Contact Page Styles */
