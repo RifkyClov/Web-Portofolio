@@ -638,8 +638,7 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    text-align: left;
     padding-bottom: 1.5rem;
 }
 
@@ -661,6 +660,7 @@ footer {
     color: var(--nav-link-inactive-color);
     margin: 0 1.5rem;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .blog-post-item .read-more {
@@ -674,6 +674,8 @@ footer {
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.1rem;
+    align-self: center;
+    margin-left: 0;
 }
 
 .blog-post-item .read-more:hover {
@@ -754,57 +756,69 @@ footer {
     line-height: 1.5;
 }
 
-.blog-post-item a.read-more {
+.blog-post-item .read-more {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1.5px solid var(--text-color);
+    padding: 0.9rem 2.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;
     text-decoration: none;
-    color: #5DADE2;
-    font-weight: 500;
+    margin-top: auto;
+    margin-left: 1.5rem;
 }
 
-.blog-post-item a.read-more:hover {
-    text-decoration: underline;
+.blog-post-item .read-more:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
 }
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding: 2rem;
-    background-color: var(--bg-dark);
-    min-height: calc(100vh - 80px - 230px);
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: var(--primary-color);
 }
 
 .contact-title {
-    font-size: 3rem;
+    font-size: 5rem;
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
 }
 
 .contact-container {
     display: flex;
-    gap: 4rem;
+    gap: 8rem;
+    margin: 0 10%;
     margin-bottom: 4rem;
 }
 
 .contact-form {
     flex: 1;
     background-color: #1E1E1E;
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 15px;
 }
 
 .form-row {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-input {
     background-color: #2A2A2A;
-    border: 1px solid #3A3A3A;
+    border: none;
     color: var(--text-color);
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 8px;
     width: 100%;
+    font-size: 1rem;
 }
 
 .form-input::placeholder {
@@ -813,28 +827,31 @@ footer {
 
 .full-width {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .message-input {
-    height: 150px;
+    height: 200px;
     resize: none;
 }
 
 .send-message-btn {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: transparent;
     color: var(--text-color);
-    border: 1px solid var(--text-color);
-    border-radius: 8px;
+    border: 1.5px solid var(--text-color);
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
 .send-message-btn:hover {
     background-color: var(--text-color);
-    color: var(--bg-dark);
+    color: var(--primary-color);
 }
 
 .contact-info {
@@ -842,9 +859,11 @@ footer {
 }
 
 .contact-info h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--text-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding: 0;
 }
 
 .text-blue {
@@ -853,27 +872,30 @@ footer {
 
 .contact-description {
     color: var(--nav-link-inactive-color);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    line-height: 1.6;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
 }
 
-.contact-item {
+.contact-detail-item {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #2A2A2A;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: 1.5px solid var(--text-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -881,83 +903,73 @@ footer {
 }
 
 .contact-icon i {
-    font-size: 1.5rem;
-    color: #3282B8;
+    font-size: 2rem;
+    color: var(--text-color);
 }
 
-.contact-text h3 {
+.contact-text h2 {
+    font-size: 2rem;
     color: var(--text-color);
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    text-align: left;
+    padding: 0;
 }
 
 .contact-text p {
-    color: #3282B8;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--nav-link-inactive-color);
+    line-height: 1.5;
 }
 
-.social-links {
+.contact-text p {
+    font-size: 1.2rem;
+    color: var(--nav-link-inactive-color);
+    line-height: 1.5;
+}
+
+.social-media-links {
     display: flex;
     gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #2A2A2A;
+.social-media-icon {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1.5px solid var(--text-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-media-icon i {
+    font-size: 1.5rem;
     color: var(--text-color);
     transition: all 0.3s ease;
 }
 
-.social-icon:hover {
-    background-color: #3282B8;
-    color: var(--text-color);
+.social-media-icon:hover {
+    background-color: var(--text-color);
+}
+
+.social-media-icon:hover i {
+    color: var(--primary-color);
 }
 
 .map-container {
-    margin-top: 4rem;
     width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-}
-
-.contact-hero {
-    text-align: center;
-    padding: 2rem 5% 2rem 5%; /* Mengurangi padding atas dan bawah */
-    margin-bottom: 1rem; /* Mengurangi margin bawah */
-}
-
-.contact-hero h2 {
-    font-size: 3rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-}
-
-.contact-hero p {
-    font-size: 1.2rem;
-    color: var(--nav-link-inactive-color);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-form-section {
+.map-container iframe {
     width: 100%;
-    max-width: 700px; /* Batasi lebar form untuk tampilan yang lebih baik */
-    padding: 2rem 5%;
-    text-align: center; /* Memusatkan placeholder teks */
+    height: 100%;
+    border: none;
 }
 
 /* Anda bisa menambahkan gaya untuk elemen form di sini nanti */
