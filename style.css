@@ -610,7 +610,7 @@ footer {
 .blog-hero {
     text-align: center;
     padding: 1rem 5%;
-    margin-top: px;
+    margin-top: 1px;
 }
 
 .blog-hero h2 {
@@ -767,13 +767,170 @@ footer {
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding-top: 80px; /* Sesuaikan jika tinggi navbar Anda berbeda atau jika navbar tidak fixed */
-    padding-bottom: 4rem; /* Beri ruang sebelum footer */
-    min-height: calc(100vh - var(--nav-height) - 230px); /* Perkiraan tinggi footer, sesuaikan jika perlu */
+    padding: 2rem;
+    background-color: var(--bg-dark);
+    min-height: calc(100vh - 80px - 230px);
+}
+
+.contact-title {
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.contact-container {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    background-color: #2A2A2A;
+    border: 1px solid #3A3A3A;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.message-input {
+    height: 150px;
+    resize: none;
+}
+
+.send-message-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-message-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-dark);
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.text-blue {
+    color: #3282B8;
+}
+
+.contact-description {
+    color: var(--nav-link-inactive-color);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.contact-details {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #2A2A2A;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: #3282B8;
+}
+
+.contact-text h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-text p {
+    color: #3282B8;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #2A2A2A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #3282B8;
+    color: var(--text-color);
+}
+
+.map-container {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
 }
 
 .contact-hero {
