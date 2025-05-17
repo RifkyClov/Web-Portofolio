@@ -137,14 +137,14 @@ h1 {
     gap: 5rem;
 }
 
-.social-links a i { /* Mengubah target dari img ke a i */
-    font-size: 35px; /* Atur ukuran ikon */
-    color: var(--text-color); /* Atur warna ikon, sesuaikan jika perlu */
+.social-links a i {
+    font-size: 35px;
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .social-links a:hover i {
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .hero-image {
@@ -779,74 +779,74 @@ footer {
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding: 80px 5% 4rem;
-    background-color: var(--bg-dark);
+    padding-top: 120px;
     min-height: calc(100vh - 80px - 230px);
 }
 
 .contact-title {
-    font-size: 3rem;
-    color: var(--text-color);
+    font-size: 5rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .contact-container {
     display: flex;
-    gap: 4rem;
-    margin-bottom: 4rem;
+    justify-content: space-between;
+    gap: 8rem;
+    margin: 0 15%;
 }
 
 .contact-form {
     flex: 1;
     background-color: #1E1E1E;
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 15px;
 }
 
-.form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.form-input {
-    background-color: #2A2A2A;
-    border: 1px solid #3A3A3A;
-    color: var(--text-color);
-    padding: 1rem;
-    border-radius: 8px;
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-}
-
-.form-input::placeholder {
-    color: #888;
-}
-
-.full-width {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.message-input {
-    height: 150px;
-    resize: none;
-}
-
-.send-message-btn {
-    width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
     background-color: transparent;
-    color: var(--text-color);
     border: 1px solid var(--text-color);
-    border-radius: 8px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--nav-link-inactive-color);
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-row input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
-.send-message-btn:hover {
+.contact-form button:hover {
     background-color: var(--text-color);
-    color: var(--bg-dark);
+    color: var(--primary-color);
 }
 
 .contact-info {
@@ -854,122 +854,65 @@ footer {
 }
 
 .contact-info h2 {
-    font-size: 3rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-}
-
-.text-blue {
-    color: #3282B8;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .contact-description {
+    font-size: 1.2rem;
     color: var(--nav-link-inactive-color);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
-.contact-details {
+.contact-detail-item {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
 .contact-icon {
-    width: 50px;
-    height: 50px;
-    background-color: #2A2A2A;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    border: 1.5px solid var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
 }
 
 .contact-icon i {
     font-size: 1.5rem;
-    color: #3282B8;
+    color: var(--text-color);
 }
 
-.contact-text h3 {
+.contact-text h2 {
+    font-size: 1.8rem;
     color: var(--text-color);
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 .contact-text p {
-    color: #3282B8;
     font-size: 1.1rem;
+    color: var(--nav-link-inactive-color);
 }
 
 .social-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 5rem;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #2A2A2A;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.social-links a i {
+    font-size: 35px;
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.social-icon:hover {
-    background-color: #3282B8;
+.social-links a:hover i {
     color: var(--text-color);
-}
-
-.map-container {
-    margin-top: 4rem;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-}
-
-.contact-hero {
-    text-align: center;
-    padding: 2rem 5% 2rem 5%; /* Mengurangi padding atas dan bawah */
-    margin-bottom: 1rem; /* Mengurangi margin bawah */
-}
-
-.contact-hero h2 {
-    font-size: 3rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-}
-
-.contact-hero p {
-    font-size: 1.2rem;
-    color: var(--nav-link-inactive-color);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-form-section {
-    width: 100%;
-    max-width: 700px; /* Batasi lebar form untuk tampilan yang lebih baik */
-    padding: 2rem 5%;
-    text-align: center; /* Memusatkan placeholder teks */
 }
 
 /* Anda bisa menambahkan gaya untuk elemen form di sini nanti */
