@@ -134,7 +134,7 @@ h1 {
 
 .social-links {
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
 }
 
 .social-links a i { /* Mengubah target dari img ke a i */
