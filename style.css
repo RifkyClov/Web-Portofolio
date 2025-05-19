@@ -115,7 +115,7 @@ nav .logo img {
 }
 
 h1 {
-    font-size: 6.5rem; /* Diperbesar dari 5.5rem */
+    font-size: 5rem; /* Diperbesar dari 5.5rem */
     margin-bottom: 2.5rem; /* Penyesuaian margin untuk ukuran font yang lebih besar */
     line-height: 1.1; /* Mungkin perlu sedikit penyesuaian line-height */
 }
@@ -148,8 +148,9 @@ h1 {
 }
 
 .hero-image img {
-    max-width: 80%;
+    max-width: 65%;
     border-radius: 20px;
+    margin-left: 150px;
     box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5);
 }
 
@@ -172,12 +173,12 @@ h2 {
 .skills-container {
     display: flex;
     justify-content: space-between; 
-    gap: 3.5rem; /* Diperbesar dari 2.5rem untuk jarak antar card lebih besar */
+    gap: 2.5rem; /* Diperbesar dari 2.5rem untuk jarak antar card lebih besar */
 }
 
 .skill-card {
     background-color: transparent; 
-    padding: 4.5rem; /* Diperbesar dari 2rem untuk membuat card lebih besar */
+    padding: 2.5rem; /* Diperbesar dari 2rem untuk membuat card lebih besar */
     border-radius: 25px; 
     flex: 1;
     display: flex;
@@ -221,6 +222,41 @@ h2 {
     font-size: 1.05rem; 
     color: var(--nav-link-inactive-color); 
     line-height: 1.6; 
+}
+
+
+@media (max-width: 768px) {
+    .learned {
+        padding: 3rem 5%;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .skill-card {
+        padding: 2rem;
+        aspect-ratio: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .learned {
+        padding: 2rem 5%;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-text-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-text-content p {
+        font-size: 0.9rem;
+    }
 }
 
 .section-divider {
@@ -388,15 +424,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    .search-form {
-        order: 2;
-        width: auto;
-    }
-
-    .search-input {
-        width: 150px;
-    }
-
     .hero {
         flex-direction: column;
         text-align: center;
@@ -425,13 +452,18 @@ footer {
         max-width: 100%;
     }
 
-    .skills-container {
-        flex-direction: column;
-        gap: 2rem;
+    .learned {
+        padding: 3rem 5%;
     }
 
-    .skill-card {
-        padding: 2rem;
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .project-card {
@@ -446,61 +478,6 @@ footer {
     .project-info p {
         font-size: 1.5rem;
         margin-bottom: 2rem;
-    }
-
-    .about-me-hero {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem 5%;
-    }
-
-    .about-me-image img {
-        width: 300px;
-        height: 300px;
-        margin-left: 0;
-    }
-
-    .about-me-intro h1 {
-        font-size: 3.5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .about-me-intro p {
-        font-size: 1.5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .about-details {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .education-section h3,
-    .strength-section h3,
-    .experience-section h3 {
-        font-size: 2.5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .education-item,
-    .experience-item {
-        margin-left: 0;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .education-date,
-    .experience-date {
-        margin-left: 0;
-        min-width: auto;
-    }
-
-    .strength-pills {
-        margin-left: 0;
-        justify-content: center;
     }
 
     .contact-container {
@@ -570,6 +547,27 @@ footer {
         font-size: 25px;
     }
 
+    .learned {
+        padding: 2rem 5%;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-text-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-text-content p {
+        font-size: 0.85rem;
+    }
+
     .contact-form {
         padding: 1.5rem;
     }
@@ -585,12 +583,14 @@ footer {
     .copyright {
         font-size: 0.75rem;
     }
-}
+
 
 /* About Page Styles */
 .about-page-main {
     padding-top: 80px; 
     padding-bottom: 4rem; 
+}
+
 }
 
 .about-me-hero {
@@ -725,17 +725,152 @@ footer {
 
 /* Responsive adjustments untuk about page jika diperlukan */
 @media (max-width: 768px) {
+    .about-page-main {
+        padding-top: 60px;
+        padding-bottom: 2rem;
+    }
+
     .about-me-hero {
         flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 5%;
+        margin-bottom: 2rem;
         text-align: center;
     }
 
     .about-me-image img {
-        margin-bottom: 2rem;
+        width: 250px;
+        height: 250px;
+        margin-left: 0;
+        margin-bottom: 0;
+        box-shadow: 0px 0px 100px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .about-me-intro h1 {
+        font-size: 3rem;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .about-me-intro p {
+        font-size: 1.2rem;
+        margin-left: 0;
+        text-align: center;
+        max-width: 100%;
+        line-height: 1.5;
     }
 
     .about-details {
         flex-direction: column;
+        gap: 2rem;
+        padding: 0 5%;
+        margin-bottom: 2rem;
+    }
+
+    .education-section h3,
+    .strength-section h3,
+    .experience-section h3 {
+        font-size: 1.8rem;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .education-item,
+    .experience-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .education-date,
+    .experience-date {
+        margin-left: 0;
+        min-width: auto;
+        font-size: 1rem;
+    }
+
+    .education-info h4,
+    .experience-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .education-info p,
+    .experience-info p {
+        font-size: 0.9rem;
+    }
+
+    .strength-pills {
+        justify-content: center;
+        margin-left: 0;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .strength-pills .pill {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .tools-known-section {
+        margin: 2rem 5% 0 5%;
+        padding: 1.5rem 5%;
+    }
+
+    .tools-known-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tools-grid {
+        gap: 1rem;
+    }
+
+    .tool-item {
+        width: 80px;
+    }
+
+    .tool-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-me-intro h1 {
+        font-size: 2rem;
+    }
+
+    .about-me-intro p {
+        font-size: 1rem;
+    }
+
+    .education-section h3,
+    .strength-section h3,
+    .experience-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .tools-known-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .tool-item {
+        width: 70px;
+    }
+
+    .tool-item img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -965,7 +1100,7 @@ footer {
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding-top: 120px;
+    padding-top: 30px;
     min-height: calc(100vh - 80px - 230px);
 }
 
@@ -981,7 +1116,7 @@ footer {
 }
 
 .contact-title {
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 6rem;
 }
