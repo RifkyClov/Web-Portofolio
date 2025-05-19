@@ -4,4 +4,6 @@ Pak Hermanto : navbar nya sesuaikan jadi ke tengah
 Pak Hermanto : versi mobile sangat tidak responsif
 <br>
 Syafaat : tambah shadow dibelakang foto profill
+<br>
+aditya : ganti tulisan di footer dari portfolio menjadi portofolio agar sesuai dengan navbar
 

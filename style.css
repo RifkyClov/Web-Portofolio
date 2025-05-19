@@ -596,8 +596,9 @@ footer {
 .about-me-hero {
     display: flex;
     align-items: center; 
-    gap: 4rem;           /* Sedikit perbesar jarak antara gambar dan teks */
+    gap: 1rem;           /* Sedikit perbesar jarak antara gambar dan teks */
     padding: 2rem 5%;    /* Sedikit perbesar padding */
+    margin-top: 5rem;;
     margin-bottom: 4rem; /* Sedikit perbesar margin bawah */
 }
 
@@ -606,7 +607,7 @@ footer {
     height: 400px;       /* Diperbesar dari 200px */
     border-radius: 25px; /* Sedikit perbesar border-radius jika diinginkan */
     object-fit: cover;
-    margin-left: 10rem;
+    margin-left: 5rem;
     box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5); 
 }
 
@@ -615,11 +616,11 @@ footer {
 }
 
 .about-me-intro h1 {
-    font-size: 5.5rem;   /* Diperbesar dari 2.8rem */
+    font-size: 4rem;   /* Diperbesar dari 2.8rem */
     margin-bottom: 1.2rem; /* Disesuaikan */
     color: var(--text-color);
     line-height: 1.2; /* Tambahkan untuk spasi antar baris jika nama terlalu panjang */
-    margin-left: 11rem;
+    margin-left: 5rem;
 }
 
 .about-me-intro h1 .name-gradient { /* Menggunakan name-gradient seperti di halaman utama */
@@ -631,11 +632,11 @@ footer {
 }
 
 .about-me-intro p {
-    font-size: 2.25rem;  /* Diperbesar dari 1.1rem */
+    font-size: 1.5rem;  /* Diperbesar dari 1.1rem */
     line-height: 1.75; /* Disesuaikan */
     color: var(--text-color); 
     max-width: 700px; /* Sedikit perlebar max-width jika perlu */
-    margin-left: 11rem;
+    margin-left: 5rem;
 }
 
 .about-details {
@@ -661,7 +662,7 @@ footer {
     font-size: 3.3rem;
     color: var(--text-color);
     margin-bottom: 1.5rem;
-    margin-left: 17rem;
+    margin-left: 10rem;
 }
 
 .education-item,
@@ -669,14 +670,14 @@ footer {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
-    margin-left: 10.5rem;
+    margin-left: 3.5rem;
     
 }
 
 .education-date,
 .experience-date {
     font-size: 1.3rem;
-    color: var(--nav-link-inactive-color);
+    color: var(--text-color);
     min-width: 100px; /* Agar tanggal rata */
     margin-left: 6.5rem;
 }
@@ -703,14 +704,14 @@ footer {
 .education-info p,
 .experience-info p {
     font-size: 1.1rem;
-    color: var(--nav-link-inactive-color);
+    color: var(--text-color);
 }
 
 .strength-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
-    margin-left: 17rem;
+    margin-left: 10rem;
 }
 
 .strength-pills .pill {
@@ -882,6 +883,7 @@ footer {
     border-radius: 20px; /* Sudut melengkung untuk section */
     text-align: center;
     margin-top: 8rem;
+    margin-bottom: 2rem;
 }
 
 .tools-known-section h2 {
@@ -1100,7 +1102,7 @@ footer {
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding-top: 30px;
+    padding-top: 40px;
     min-height: calc(100vh - 80px - 230px);
 }
 
@@ -1221,14 +1223,14 @@ footer {
 }
 
 .contact-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--text-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
     text-align: left;
 }
 
 .contact-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--nav-link-inactive-color);
 }
 
