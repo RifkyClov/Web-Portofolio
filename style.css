@@ -29,8 +29,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3%;
+    padding: 2rem 3%; /* Ubah dari 1rem 3% menjadi 1.5rem 3% */
+    /* position: fixed; Dihapus atau diubah menjadi static */
     width: 100%;
+    /* top: 0; Dihapus */
+    /* z-index: 1000; Dihapus */
     background-color: var(--primary-color);
 }
 
@@ -42,19 +45,20 @@ nav {
     display: flex;
     align-items: center;
     background-color: var(--nav-links-container-bg);
-    border-radius: 15px;
-    padding: 0.1rem;
+    border-radius: 20px;
+    padding: 0.1rem; /* Sedikit penyesuaian padding kontainer jika perlu */
+    
 }
 nav .logo img {
-    max-height: 30px;
+    max-height: 40px;
     width: auto;
     vertical-align: middle;
 }
 .nav-links a {
     color: var(--nav-link-inactive-color);
     text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.8rem 2rem; /* Perbesar padding di sini */
+    font-size: 1.2rem;      /* Perbesar ukuran font di sini */
     transition: color 0.3s ease;
     display: inline-block;
 }
@@ -69,14 +73,16 @@ nav .logo img {
 }
 
 .download-cv {
-    background-color: var(--secondary-color);
-    color: var(--button-text-dark);
+    background-color: var(--secondary-color); /* Latar belakang putih */
+    color: var(--button-text-dark);    /* Teks hitam */
     border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    padding: 0.8rem 2rem; /* Padding yang disesuaikan */
+    border-radius: 25px;     /* Bentuk pil */
     cursor: pointer;
+    /* Pastikan tidak ada margin-left yang mengganggu di sini, 
+       karena justify-content: space-between pada nav sudah menangani penempatan */
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     transition: background-color 0.3s ease;
 }
 
@@ -115,7 +121,7 @@ nav .logo img {
 }
 
 h1 {
-    font-size: 5rem; /* Diperbesar dari 5.5rem */
+    font-size: 6.5rem; /* Diperbesar dari 5.5rem */
     margin-bottom: 2.5rem; /* Penyesuaian margin untuk ukuran font yang lebih besar */
     line-height: 1.1; /* Mungkin perlu sedikit penyesuaian line-height */
 }
@@ -128,17 +134,17 @@ h1 {
 
 .social-links {
     display: flex;
-    gap: 5rem;
+    gap: 4rem;
 }
 
-.social-links a i {
-    font-size: 35px;
-    color: var(--text-color);
+.social-links a i { /* Mengubah target dari img ke a i */
+    font-size: 35px; /* Atur ukuran ikon */
+    color: var(--text-color); /* Atur warna ikon, sesuaikan jika perlu */
     transition: color 0.3s ease;
 }
 
 .social-links a:hover i {
-    color: var(--text-color);
+    color: var(--text-color); 
 }
 
 .hero-image {
@@ -148,9 +154,8 @@ h1 {
 }
 
 .hero-image img {
-    max-width: 65%;
+    max-width: 80%;
     border-radius: 20px;
-    margin-left: 150px;
     box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5);
 }
 
@@ -173,12 +178,12 @@ h2 {
 .skills-container {
     display: flex;
     justify-content: space-between; 
-    gap: 2.5rem; /* Diperbesar dari 2.5rem untuk jarak antar card lebih besar */
+    gap: 3.5rem; /* Diperbesar dari 2.5rem untuk jarak antar card lebih besar */
 }
 
 .skill-card {
     background-color: transparent; 
-    padding: 2.5rem; /* Diperbesar dari 2rem untuk membuat card lebih besar */
+    padding: 4.5rem; /* Diperbesar dari 2rem untuk membuat card lebih besar */
     border-radius: 25px; 
     flex: 1;
     display: flex;
@@ -222,41 +227,6 @@ h2 {
     font-size: 1.05rem; 
     color: var(--nav-link-inactive-color); 
     line-height: 1.6; 
-}
-
-
-@media (max-width: 768px) {
-    .learned {
-        padding: 3rem 5%;
-    }
-
-    .skills-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .skill-card {
-        padding: 2rem;
-        aspect-ratio: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .learned {
-        padding: 2rem 5%;
-    }
-
-    .skill-card {
-        padding: 1.5rem;
-    }
-
-    .skill-text-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .skill-text-content p {
-        font-size: 0.9rem;
-    }
 }
 
 .section-divider {
@@ -404,186 +374,32 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        padding: 0.8rem 5%;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        order: 3;
-        width: 100%;
-        margin-right: 0;
-        padding: 0.5rem;
-        justify-content: center;
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 5%;
-        gap: 2rem;
+        padding-top: 6rem;
     }
 
-    h1 {
-        font-size: 4rem;
-    }
-
-    .greeting {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.4rem;
+    .hero-content {
+        margin-bottom: 3rem;
     }
 
     .social-links {
         justify-content: center;
-        gap: 3rem;
-    }
-
-    .hero-image img {
-        max-width: 100%;
-    }
-
-    .learned {
-        padding: 3rem 5%;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
     }
 
     .skills-container {
         flex-direction: column;
-        gap: 1.5rem;
     }
 
     .project-card {
-        padding: 2rem 5%;
-    }
-
-    .project-content-wrapper {
         flex-direction: column;
-        gap: 2rem;
     }
 
-    .project-info p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        gap: 3rem;
-        margin: 0 5%;
-    }
-
-    .map-container {
-        margin: 2rem 5% 0;
-    }
-
-    .blog-posts-container {
-        grid-template-columns: 1fr;
-        padding: 0 5%;
-    }
-
-    footer {
-        padding: 2rem 5% 1.5rem 5%;
-    }
-
-    .footer-content .logo img {
-        max-height: 40px;
-    }
-
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-
-    .footer-links a {
-        margin: 0;
-        font-size: 1.4rem;
-    }
-
-    .footer-divider {
-        width: 85%;
-        margin: 1.5rem auto;
-    }
-
-    .copyright {
-        font-size: 0.8rem;
+    .nav-links {
+        display: none;
     }
 }
-
-@media (max-width: 480px) {
-    .nav-links a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .search-input {
-        width: 120px;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    .social-links {
-        gap: 2rem;
-    }
-
-    .social-links a i {
-        font-size: 25px;
-    }
-
-    .learned {
-        padding: 2rem 5%;
-    }
-
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .skill-card {
-        padding: 1.5rem;
-    }
-
-    .skill-text-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .skill-text-content p {
-        font-size: 0.85rem;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .footer-content .logo img {
-        max-height: 35px;
-    }
-
-    .footer-links a {
-        font-size: 1.2rem;
-    }
-
-    .copyright {
-        font-size: 0.75rem;
-    }
-
 
 /* About Page Styles */
 .about-page-main {
@@ -591,14 +407,11 @@ footer {
     padding-bottom: 4rem; 
 }
 
-}
-
 .about-me-hero {
     display: flex;
     align-items: center; 
-    gap: 1rem;           /* Sedikit perbesar jarak antara gambar dan teks */
+    gap: 4rem;           /* Sedikit perbesar jarak antara gambar dan teks */
     padding: 2rem 5%;    /* Sedikit perbesar padding */
-    margin-top: 5rem;;
     margin-bottom: 4rem; /* Sedikit perbesar margin bawah */
 }
 
@@ -607,7 +420,7 @@ footer {
     height: 400px;       /* Diperbesar dari 200px */
     border-radius: 25px; /* Sedikit perbesar border-radius jika diinginkan */
     object-fit: cover;
-    margin-left: 5rem;
+    margin-left: 10rem;
     box-shadow: 0px 0px 200px 30px rgba(255, 255, 255, 0.5); 
 }
 
@@ -616,11 +429,11 @@ footer {
 }
 
 .about-me-intro h1 {
-    font-size: 4rem;   /* Diperbesar dari 2.8rem */
+    font-size: 5.5rem;   /* Diperbesar dari 2.8rem */
     margin-bottom: 1.2rem; /* Disesuaikan */
     color: var(--text-color);
     line-height: 1.2; /* Tambahkan untuk spasi antar baris jika nama terlalu panjang */
-    margin-left: 5rem;
+    margin-left: 11rem;
 }
 
 .about-me-intro h1 .name-gradient { /* Menggunakan name-gradient seperti di halaman utama */
@@ -632,11 +445,11 @@ footer {
 }
 
 .about-me-intro p {
-    font-size: 1.5rem;  /* Diperbesar dari 1.1rem */
+    font-size: 2.25rem;  /* Diperbesar dari 1.1rem */
     line-height: 1.75; /* Disesuaikan */
     color: var(--text-color); 
     max-width: 700px; /* Sedikit perlebar max-width jika perlu */
-    margin-left: 5rem;
+    margin-left: 11rem;
 }
 
 .about-details {
@@ -662,7 +475,7 @@ footer {
     font-size: 3.3rem;
     color: var(--text-color);
     margin-bottom: 1.5rem;
-    margin-left: 10rem;
+    margin-left: 17rem;
 }
 
 .education-item,
@@ -670,14 +483,14 @@ footer {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
-    margin-left: 3.5rem;
+    margin-left: 10.5rem;
     
 }
 
 .education-date,
 .experience-date {
     font-size: 1.3rem;
-    color: var(--text-color);
+    color: var(--nav-link-inactive-color);
     min-width: 100px; /* Agar tanggal rata */
     margin-left: 6.5rem;
 }
@@ -704,14 +517,14 @@ footer {
 .education-info p,
 .experience-info p {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--nav-link-inactive-color);
 }
 
 .strength-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
-    margin-left: 10rem;
+    margin-left: 17rem;
 }
 
 .strength-pills .pill {
@@ -726,152 +539,17 @@ footer {
 
 /* Responsive adjustments untuk about page jika diperlukan */
 @media (max-width: 768px) {
-    .about-page-main {
-        padding-top: 60px;
-        padding-bottom: 2rem;
-    }
-
     .about-me-hero {
         flex-direction: column;
-        gap: 2rem;
-        padding: 1rem 5%;
-        margin-bottom: 2rem;
         text-align: center;
     }
 
     .about-me-image img {
-        width: 250px;
-        height: 250px;
-        margin-left: 0;
-        margin-bottom: 0;
-        box-shadow: 0px 0px 100px 15px rgba(255, 255, 255, 0.3);
-    }
-
-    .about-me-intro h1 {
-        font-size: 3rem;
-        margin-left: 0;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .about-me-intro p {
-        font-size: 1.2rem;
-        margin-left: 0;
-        text-align: center;
-        max-width: 100%;
-        line-height: 1.5;
+        margin-bottom: 2rem;
     }
 
     .about-details {
         flex-direction: column;
-        gap: 2rem;
-        padding: 0 5%;
-        margin-bottom: 2rem;
-    }
-
-    .education-section h3,
-    .strength-section h3,
-    .experience-section h3 {
-        font-size: 1.8rem;
-        margin-left: 0;
-        text-align: center;
-        margin-bottom: 1.2rem;
-    }
-
-    .education-item,
-    .experience-item {
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-left: 0;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        padding: 0;
-    }
-
-    .education-date,
-    .experience-date {
-        margin-left: 0;
-        min-width: auto;
-        font-size: 1rem;
-    }
-
-    .education-info h4,
-    .experience-info h4 {
-        font-size: 1.1rem;
-    }
-
-    .education-info p,
-    .experience-info p {
-        font-size: 0.9rem;
-    }
-
-    .strength-pills {
-        justify-content: center;
-        margin-left: 0;
-        gap: 0.5rem;
-        padding: 0;
-    }
-
-    .strength-pills .pill {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.8rem;
-    }
-
-    .tools-known-section {
-        margin: 2rem 5% 0 5%;
-        padding: 1.5rem 5%;
-    }
-
-    .tools-known-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .tools-grid {
-        gap: 1rem;
-    }
-
-    .tool-item {
-        width: 80px;
-    }
-
-    .tool-item img {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-me-image img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .about-me-intro h1 {
-        font-size: 2rem;
-    }
-
-    .about-me-intro p {
-        font-size: 1rem;
-    }
-
-    .education-section h3,
-    .strength-section h3,
-    .experience-section h3 {
-        font-size: 1.5rem;
-    }
-
-    .tools-known-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .tool-item {
-        width: 70px;
-    }
-
-    .tool-item img {
-        width: 50px;
-        height: 50px;
     }
 }
 
@@ -883,7 +561,6 @@ footer {
     border-radius: 20px; /* Sudut melengkung untuk section */
     text-align: center;
     margin-top: 8rem;
-    margin-bottom: 2rem;
 }
 
 .tools-known-section h2 {
@@ -925,20 +602,20 @@ footer {
 
 /* Blog Page Styles */
 .blog-page-main {
-    padding-top: 0px;
+    padding-top: 80px;
     min-height: calc(100vh - 80px - 230px);
     background-color: var(--bg-dark);
 }
 
 .blog-hero {
     text-align: center;
-    padding: 1rem 5%;
-    margin-top: px;
+    padding: 2rem 5%;
 }
 
 .blog-hero h2 {
     font-size: 4rem;
     color: var(--text-color);
+    margin-bottom: 2rem;
 }
 
 .blog-posts-container {
@@ -947,9 +624,7 @@ footer {
     grid-template-rows: repeat(2, auto);
     gap: 2.5rem;
     padding: 0 15%;
-    margin: 0 auto 4rem auto;
-    max-width: 1200px;
-    justify-content: center;
+    margin-bottom: 4rem;
 }
 
 .blog-post-item {
@@ -961,7 +636,6 @@ footer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    text-align: left;
     padding-bottom: 1.5rem;
 }
 
@@ -983,7 +657,6 @@ footer {
     color: var(--nav-link-inactive-color);
     margin: 0 1.5rem;
     margin-bottom: 1rem;
-    display: block;
 }
 
 .blog-post-item .read-more {
@@ -997,8 +670,6 @@ footer {
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.1rem;
-    align-self: center;
-    margin-left: 0;
 }
 
 .blog-post-item .read-more:hover {
@@ -1014,7 +685,7 @@ footer {
 
 .blog-hero {
     text-align: center;
-    padding: 2rem 5%;
+    padding: 4rem 5% 2rem 5%;
 }
 
 .blog-hero h2 {
@@ -1079,174 +750,53 @@ footer {
     line-height: 1.5;
 }
 
-.blog-post-item .read-more {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1.5px solid var(--text-color);
-    padding: 0.9rem 2.2rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.blog-post-item a.read-more {
     display: inline-block;
     text-decoration: none;
-    margin-top: auto;
-    margin-left: 1.5rem;
+    color: #5DADE2;
+    font-weight: 500;
 }
 
-.blog-post-item .read-more:hover {
-    background-color: var(--text-color);
-    color: var(--primary-color);
+.blog-post-item a.read-more:hover {
+    text-decoration: underline;
 }
 
 /* Contact Page Styles */
 .contact-page-main {
-    padding-top: 40px;
-    min-height: calc(100vh - 80px - 230px);
-}
-
-.map-container {
-    margin: 4rem 15% 0;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 400px;
-    border-radius: 15px;
-    filter: grayscale(100%) invert(92%) contrast(83%);
-}
-
-.contact-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 6rem;
-}
-
-.contact-container {
+    padding-top: 80px; /* Sesuaikan jika tinggi navbar Anda berbeda atau jika navbar tidak fixed */
+    padding-bottom: 4rem; /* Beri ruang sebelum footer */
+    min-height: calc(100vh - var(--nav-height) - 230px); /* Perkiraan tinggi footer, sesuaikan jika perlu */
     display: flex;
-    justify-content: space-between;
-    gap: 8rem;
-    margin: 0 15%;
-}
-
-.contact-form {
-    flex: 1;
-    background-color: #1E1E1E;
-    padding: 3rem;
-    border-radius: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-    background-color: transparent;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: var(--nav-link-inactive-color);
-}
-
-.contact-form .form-row {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-form .form-row input {
-    flex: 1;
-    margin-bottom: 0;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 1.2rem;
-    background-color: transparent;
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    margin-top: 1rem;
-}
-
-.contact-form button:hover {
-    background-color: var(--text-color);
-    color: var(--primary-color);
-}
-
-.contact-info {
-    flex: 1;
-}
-
-.contact-info h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.contact-description {
-    font-size: 1.2rem;
-    color: var(--nav-link-inactive-color);
-    margin-bottom: 4rem;
-}
-
-.contact-detail-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.contact-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1.5px solid var(--text-color);
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
 }
 
-.contact-icon i {
-    font-size: 1.5rem;
+.contact-hero {
+    text-align: center;
+    padding: 2rem 5% 2rem 5%; /* Mengurangi padding atas dan bawah */
+    margin-bottom: 1rem; /* Mengurangi margin bawah */
+}
+
+.contact-hero h2 {
+    font-size: 3rem;
     color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
-.contact-text h2 {
-    font-size: 1.5rem;
-    color: var(--text-color);
-    margin-bottom: 0rem;
-    text-align: left;
-}
-
-.contact-text p {
-    font-size: 1rem;
+.contact-hero p {
+    font-size: 1.2rem;
     color: var(--nav-link-inactive-color);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.social-links {
-    display: flex;
-    gap: 5rem;
-}
-
-.social-links a i {
-    font-size: 35px;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover i {
-    color: var(--text-color);
+.contact-form-section {
+    width: 100%;
+    max-width: 700px; /* Batasi lebar form untuk tampilan yang lebih baik */
+    padding: 2rem 5%;
+    text-align: center; /* Memusatkan placeholder teks */
 }
 
 /* Anda bisa menambahkan gaya untuk elemen form di sini nanti */
