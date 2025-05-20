@@ -405,23 +405,32 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        padding: 0.8rem 5%;
+        padding: 1rem 5%;
         flex-wrap: wrap;
         gap: 1rem;
+        position: relative;
     }
 
     .nav-links {
         order: 3;
         width: 100%;
-        margin-right: 0;
+        margin: 0.5rem 0;
         padding: 0.5rem;
         justify-content: center;
-        display: flex;
+        background-color: var(--nav-links-container-bg);
+        border-radius: 10px;
     }
 
     .nav-links a {
-        padding: 0.4rem 1rem;
+        padding: 0.5rem 1rem;
         font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .download-cv {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+        margin-left: auto;
     }
 
     .hero {
@@ -429,6 +438,8 @@ footer {
         text-align: center;
         padding: 2rem 5%;
         gap: 2rem;
+        min-height: auto;
+        margin-top: 2rem;
     }
 
     h1 {
@@ -445,11 +456,19 @@ footer {
 
     .social-links {
         justify-content: center;
-        gap: 3rem;
+        gap: 2rem;
+        margin-top: 2rem;
     }
 
     .hero-image img {
-        max-width: 100%;
+        max-width: 80%;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem;
     }
 
     .learned {
@@ -468,16 +487,35 @@ footer {
 
     .project-card {
         padding: 2rem 5%;
+        margin-top: 2rem;
     }
 
     .project-content-wrapper {
         flex-direction: column;
         gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-info {
+        order: 2;
+    }
+
+    .project-image {
+        order: 1;
+        width: 100%;
     }
 
     .project-info p {
-        font-size: 1.5rem;
+        font-size: 0.8rem;
         margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .see-more {
+        margin-top: 1rem;
+        width: auto;
+        padding: 0.8rem 2rem;
     }
 
     .contact-container {
@@ -526,25 +564,52 @@ footer {
 }
 
 @media (max-width: 480px) {
+    nav {
+        padding: 0.8rem 4%;
+    }
+
+    .nav-links {
+        padding: 0.4rem;
+        margin: 0.4rem 0;
+    }
+
     .nav-links a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 
-    .search-input {
-        width: 120px;
+    .download-cv {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
     }
 
-    h1 {
-        font-size: 3rem;
+    .logo img {
+        max-height: 25px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .greeting {
+        font-size: 1.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-image img {
+        max-width: 90%;
+        margin-top: 1.5rem;
     }
 
     .social-links {
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .social-links a i {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
     .learned {
@@ -566,6 +631,15 @@ footer {
 
     .skill-text-content p {
         font-size: 0.85rem;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+    }
+
+    .see-more {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.8rem;
     }
 
     .contact-form {
